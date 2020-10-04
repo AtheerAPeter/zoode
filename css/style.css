@@ -1,0 +1,254 @@
+@import url(https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap);
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Tajawal", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.container {
+  width: 1000px;
+  margin: auto;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15vh;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header .nav-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .nav-content .buttons .login-btn {
+  padding: 10px 30px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+header .nav-content .buttons .login-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+header .nav-content .buttons .register-btn {
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 10px 30px;
+  outline: none;
+  border: 2px solid transparent;
+  color: #fff;
+  background-color: #000;
+  border-radius: 10px;
+  -webkit-transition: color 0.2s ease, border 0.2s ease, background-color 0.2s ease;
+  transition: color 0.2s ease, border 0.2s ease, background-color 0.2s ease;
+}
+
+header .nav-content .buttons .register-btn:hover {
+  background-color: transparent;
+  color: #000;
+  border: 2px solid #000;
+}
+
+header .nav-content .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style-type: none;
+}
+
+header .nav-content .nav-links li {
+  font-size: 1.1rem;
+  margin-left: 20px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+header .nav-content .nav-links li:hover {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
+header .nav-content .logo {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .nav-content .logo img {
+  margin-left: 20px;
+}
+
+header .nav-content .logo h1 {
+  font-weight: 500;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+main .hero {
+  margin-top: 40px;
+}
+
+main .hero .hero-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .hero .hero-content img {
+  margin-left: -40px;
+  height: 500px;
+  margin: auto;
+}
+
+main .hero .hero-content .type {
+  margin: auto;
+  width: 500px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: right;
+}
+
+main .hero .hero-content .type h1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+main .hero .hero-content .type p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+main .logos-links {
+  padding: 30px 0;
+}
+
+main .logos-links .bottom-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .logos-links .bottom-links img {
+  margin: 10px;
+  cursor: pointer;
+}
+
+footer {
+  height: 15vh;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .social-links img {
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+footer .social-links img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+footer .social-links img:nth-child(1) {
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    width: 100vw;
+    padding: 0 5px;
+  }
+  .hero .hero-content .type {
+    padding-right: 100px;
+  }
+}
+
+@media screen and (max-width: 922px) {
+  .hero .hero-content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .hero .hero-content .type {
+    padding: 0;
+  }
+  .hero .hero-content .type h1 {
+    text-align: center;
+    width: 100%;
+  }
+  .hero .hero-content .type p {
+    width: 100%;
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=style.css.map */
