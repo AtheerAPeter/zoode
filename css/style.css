@@ -9,6 +9,11 @@
 
 body {
   min-height: 100vh;
+  position: relative;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .container {
@@ -42,7 +47,22 @@ header .nav-content {
           align-items: center;
 }
 
-header .nav-content .buttons .login-btn {
+header .nav-content .burger-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .nav-content .burger-div .buttons .login-btn {
   padding: 10px 30px;
   border-radius: 10px;
   border: 2px solid #000;
@@ -55,17 +75,17 @@ header .nav-content .buttons .login-btn {
           backface-visibility: hidden;
 }
 
-header .nav-content .buttons .login-btn:hover {
+header .nav-content .burger-div .buttons .login-btn:hover {
   background-color: #000;
   color: #fff;
 }
 
-header .nav-content .buttons .register-btn {
+header .nav-content .burger-div .buttons .register-btn {
   cursor: pointer;
   margin-left: 10px;
   padding: 10px 30px;
   outline: none;
-  border: 2px solid transparent;
+  border: 2px solid #000;
   color: #fff;
   background-color: #000;
   border-radius: 10px;
@@ -73,13 +93,13 @@ header .nav-content .buttons .register-btn {
   transition: color 0.2s ease, border 0.2s ease, background-color 0.2s ease;
 }
 
-header .nav-content .buttons .register-btn:hover {
+header .nav-content .burger-div .buttons .register-btn:hover {
   background-color: transparent;
   color: #000;
   border: 2px solid #000;
 }
 
-header .nav-content .nav-links {
+header .nav-content .burger-div .nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,7 +111,7 @@ header .nav-content .nav-links {
   list-style-type: none;
 }
 
-header .nav-content .nav-links li {
+header .nav-content .burger-div .nav-links li {
   font-size: 1.1rem;
   margin-left: 20px;
   cursor: pointer;
@@ -101,9 +121,24 @@ header .nav-content .nav-links li {
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 
-header .nav-content .nav-links li:hover {
+header .nav-content .burger-div .nav-links li:hover {
   -webkit-transform: translateY(-2px);
           transform: translateY(-2px);
+}
+
+header .nav-content .burger {
+  display: none;
+  background-image: url("/assets/menu.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 header .nav-content .logo {
@@ -179,7 +214,7 @@ main .logos-links .bottom-links {
 }
 
 main .logos-links .bottom-links img {
-  margin: 10px;
+  margin: 10px 0 0 10px;
   cursor: pointer;
 }
 
@@ -249,6 +284,57 @@ footer .social-links img:nth-child(1) {
   .hero .hero-content .type p {
     width: 100%;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  header .nav-content .burger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 2;
+  }
+  header .nav-content .burger-div {
+    position: fixed;
+    background-color: #fff;
+    -webkit-box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow: hidden;
+    width: 0;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  header .nav-content .burger-div .nav-links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  header .nav-content .burger-div .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header .nav-content .burger-div .buttons .login-btn {
+    margin-bottom: 10px;
   }
 }
 /*# sourceMappingURL=style.css.map */

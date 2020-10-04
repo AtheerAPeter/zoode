@@ -9,6 +9,11 @@
 
 body {
   min-height: 100vh;
+  position: relative;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .container {
@@ -28,61 +33,79 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    .buttons {
-      .login-btn {
-        padding: 10px 30px;
-        border-radius: 10px;
-        border: 2px solid #000;
-        outline: none;
-        background-color: transparent;
-        cursor: pointer;
-        transition: background-color 0.2s ease, color 0.2s ease;
-        backface-visibility: hidden;
-      }
-
-      .login-btn:hover {
-        background-color: #000;
-        color: #fff;
-      }
-
-      .register-btn {
-        cursor: pointer;
-        margin-left: 10px;
-        padding: 10px 30px;
-        outline: none;
-        border: 2px solid transparent;
-        color: #fff;
-        background-color: #000;
-        border-radius: 10px;
-        transition: color 0.2s ease, border 0.2s ease,
-          background-color 0.2s ease;
-      }
-
-      .register-btn:hover {
-        background-color: transparent;
-        color: #000;
-        border: 2px solid #000;
-      }
-    }
-
-    .nav-links {
+    .burger-div {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      list-style-type: none;
+      justify-content: space-evenly;
+      flex: 1;
+      align-items: center;
+      .buttons {
+        .login-btn {
+          padding: 10px 30px;
+          border-radius: 10px;
+          border: 2px solid #000;
+          outline: none;
+          background-color: transparent;
+          cursor: pointer;
+          transition: background-color 0.2s ease, color 0.2s ease;
+          backface-visibility: hidden;
+        }
 
-      li {
-        font-size: 1.1rem;
-        margin-left: 20px;
-        cursor: pointer;
-        transition: transform 0.2s ease;
+        .login-btn:hover {
+          background-color: #000;
+          color: #fff;
+        }
+
+        .register-btn {
+          cursor: pointer;
+          margin-left: 10px;
+          padding: 10px 30px;
+          outline: none;
+          border: 2px solid #000;
+          color: #fff;
+          background-color: #000;
+          border-radius: 10px;
+          transition: color 0.2s ease, border 0.2s ease,
+            background-color 0.2s ease;
+        }
+
+        .register-btn:hover {
+          background-color: transparent;
+          color: #000;
+          border: 2px solid #000;
+        }
       }
 
-      li:hover {
-        transform: translateY(-2px);
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        list-style-type: none;
+
+        li {
+          font-size: 1.1rem;
+          margin-left: 20px;
+          cursor: pointer;
+          transition: transform 0.2s ease;
+        }
+
+        li:hover {
+          transform: translateY(-2px);
+        }
       }
     }
-
+    .burger {
+      display: none;
+      background-image: url("/assets/menu.svg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      height: 30px;
+      width: 30px;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      transition: all 0.2s ease;
+    }
     .logo {
       cursor: pointer;
       display: flex;
@@ -139,7 +162,7 @@ main {
       align-items: center;
 
       img {
-        margin: 10px;
+        margin: 10px 0 0 10px;
         cursor: pointer;
       }
     }
@@ -201,6 +224,43 @@ footer {
         p {
           width: 100%;
           text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
+  header {
+    .nav-content {
+      .burger {
+        display: flex;
+        z-index: 2;
+      }
+
+      .burger-div {
+        position: fixed;
+        background-color: #fff;
+        box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        width: 0;
+        transition: all 0.5s;
+        .nav-links {
+          flex-direction: column;
+          text-align: center;
+        }
+        .buttons {
+          display: flex;
+          flex-direction: column;
+          .login-btn {
+            margin-bottom: 10px;
+          }
         }
       }
     }
