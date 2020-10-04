@@ -172,7 +172,7 @@ main .hero .hero-content {
 
 main .hero .hero-content img {
   margin-left: -40px;
-  height: 500px;
+  height: 400px;
   margin: auto;
 }
 
@@ -335,6 +335,9 @@ footer .social-links img:nth-child(1) {
   }
   header .nav-content .burger-div .buttons .login-btn {
     margin-bottom: 10px;
+  }
+  main .hero .hero-content img {
+    height: 400px;
   }
 }
 /*# sourceMappingURL=style.css.map */
