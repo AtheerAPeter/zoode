@@ -8,10 +8,14 @@ const Header = () => {
   useEffect(() => {
     if (showMenu) {
       sidebar.current.style.width = "300px";
+      sidebar.current.style.animation = "slidein 0.5s ease forwards";
       burgerIcon.current.style.backgroundImage = "url('/assets/close.svg')";
+      burgerIcon.current.style.position = "fixed";
     } else {
       sidebar.current.style.width = "0";
+      sidebar.current.style.animation = "slideout 0.5s ease";
       burgerIcon.current.style.backgroundImage = "url('/assets/menu.svg')";
+      burgerIcon.current.style.position = "relative";
     }
   }, [showMenu]);
 
@@ -31,11 +35,13 @@ const Header = () => {
               <li>الرئيسية</li>
             </ul>
           </div>
-          <button
-            ref={burgerIcon}
-            onClick={() => setShowMenu(!showMenu)}
-            className="burger"
-          ></button>
+          <div className="burger-container">
+            <button
+              ref={burgerIcon}
+              onClick={() => setShowMenu(!showMenu)}
+              className="burger"
+            ></button>
+          </div>
 
           <div className="logo">
             <h1>منصة زود</h1>

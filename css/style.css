@@ -5,6 +5,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "Tajawal", sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -33,6 +34,7 @@ header {
           align-items: center;
   height: 15vh;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 header .nav-content {
@@ -288,6 +290,15 @@ footer .social-links img:nth-child(1) {
 }
 
 @media screen and (max-width: 840px) {
+  header .nav-content .burger-container {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   header .nav-content .burger {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -297,8 +308,6 @@ footer .social-links img:nth-child(1) {
   header .nav-content .burger-div {
     position: fixed;
     background-color: #fff;
-    -webkit-box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
-            box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
     height: 100vh;
     top: 0;
     left: 0;
@@ -306,16 +315,14 @@ footer .social-links img:nth-child(1) {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     overflow: hidden;
     width: 0;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
   }
   header .nav-content .burger-div .nav-links {
     -webkit-box-orient: vertical;
@@ -323,6 +330,9 @@ footer .social-links img:nth-child(1) {
         -ms-flex-direction: column;
             flex-direction: column;
     text-align: center;
+  }
+  header .nav-content .burger-div .nav-links li {
+    margin-bottom: 50px;
   }
   header .nav-content .burger-div .buttons {
     display: -webkit-box;
@@ -335,6 +345,89 @@ footer .social-links img:nth-child(1) {
   }
   header .nav-content .burger-div .buttons .login-btn {
     margin-bottom: 10px;
+    width: 100%;
+  }
+  header .nav-content .burger-div .buttons .register-btn {
+    width: 100%;
+    margin: 0;
+  }
+  @-webkit-keyframes slidein {
+    from {
+      opacity: 0;
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+      -webkit-box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0);
+              box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0);
+    }
+    50% {
+      opacity: 1;
+    }
+    to {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      -webkit-box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0.5);
+              box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0.5);
+    }
+  }
+  @keyframes slidein {
+    from {
+      opacity: 0;
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+      -webkit-box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0);
+              box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0);
+    }
+    50% {
+      opacity: 1;
+    }
+    to {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      -webkit-box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0.5);
+              box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0.5);
+    }
+  }
+  @-webkit-keyframes slideout {
+    from {
+      opacity: 1;
+      -webkit-transform: translateX(0%);
+              transform: translateX(0%);
+      width: 300px;
+      -webkit-box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0.5);
+              box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+      opacity: 0;
+    }
+    to {
+      opacity: 0;
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+      width: 0px;
+      -webkit-box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0);
+              box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0);
+    }
+  }
+  @keyframes slideout {
+    from {
+      opacity: 1;
+      -webkit-transform: translateX(0%);
+              transform: translateX(0%);
+      width: 300px;
+      -webkit-box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0.5);
+              box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+      opacity: 0;
+    }
+    to {
+      opacity: 0;
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+      width: 0px;
+      -webkit-box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0);
+              box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0);
+    }
   }
   main .hero .hero-content img {
     height: 400px;

@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Tajawal", sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -27,6 +28,7 @@ header {
   align-items: center;
   height: 15vh;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
 
   .nav-content {
     display: flex;
@@ -233,6 +235,12 @@ footer {
 @media screen and (max-width: 840px) {
   header {
     .nav-content {
+      .burger-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+
       .burger {
         display: flex;
         z-index: 2;
@@ -241,25 +249,69 @@ footer {
       .burger-div {
         position: fixed;
         background-color: #fff;
-        box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
         height: 100vh;
         top: 0;
         left: 0;
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         overflow: hidden;
         width: 0;
-        transition: all 0.5s;
+
         .nav-links {
           flex-direction: column;
           text-align: center;
+          li {
+            margin-bottom: 50px;
+          }
         }
+
         .buttons {
           display: flex;
           flex-direction: column;
+
           .login-btn {
             margin-bottom: 10px;
+            width: 100%;
+          }
+
+          .register-btn {
+            width: 100%;
+            margin: 0;
+          }
+        }
+
+        @keyframes slidein {
+          from {
+            opacity: 0;
+            transform: translateX(-100%);
+            box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0);
+          }
+          50% {
+            opacity: 1;
+          }
+
+          to {
+            transform: translateX(0);
+            box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0.5);
+          }
+        }
+
+        @keyframes slideout {
+          from {
+            opacity: 1;
+            transform: translateX(0%);
+            width: 300px;
+            box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0.5);
+          }
+          50% {
+            opacity: 0;
+          }
+          to {
+            opacity: 0;
+            transform: translateX(-100%);
+            width: 0px;
+            box-shadow: 5px 0 10px 1000px rgba(0, 0, 0, 0);
           }
         }
       }
